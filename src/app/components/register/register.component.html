@@ -23,9 +23,19 @@
         
         <label for="password">Contraseña</label>
         <input placeholder="Contraseña" id="password" [(ngModel)]="password" name="password" type="password" autocomplete="new-password" required>
+        <small *ngIf="password != '' && !isValidPassword()" class="text-danger">
+            La contraseña debe tener al menos 8 caracteres, incluyendo al menos una letra mayúscula, un número y un símbolo
+        </small>
         
         <label for="repassword">Repite la Contraseña</label>
         <input placeholder="Repite la Contraseña" id="repassword" [(ngModel)]="repassword" name="repassword" type="password" autocomplete="new-password" required>
+        <!-- Mensaje de error para la contraseña -->
+        <small *ngIf="password != '' && !isValidPassword()" class="text-danger">
+            La contraseña debe tener al menos 8 caracteres, incluyendo al menos una letra mayúscula, un número y un símbolo
+        </small>
+        <small *ngIf="password != repassword" class="text-danger">
+            Las contraseñas no son iguales
+        </small>
         
         <button style="color:black" type="submit">Registrarte</button>
         <div class="login">

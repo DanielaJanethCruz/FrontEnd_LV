@@ -11,9 +11,9 @@ import { Observable } from 'rxjs';
 export class AuthService {
   //Cambia en el servidor y local 
   //localmente:
-  //private baseUrl= 'http://localhost:3000';
+  private baseUrl= 'http://localhost:3000';
   //servidor aws:
-  private baseUrl='https://52.203.37.191:3000';
+  //private baseUrl='https://52.203.37.191:3000';
 
   constructor(private http: HttpClient) { }
   //Angular proporciona el HttpClient para realizar solicitudes HTTP.
